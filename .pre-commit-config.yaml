@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v4.6.0"
+    hooks:
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: end-of-file-fixer
+        exclude: resources/
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: "v1.0.0"
+    hooks:
+      - id: check-json5
+  - repo: https://github.com/rtts/djhtml
+    rev: "3.0.6"
+    hooks:
+      - id: djhtml
+        entry: djhtml --tabwidth 2
+      - id: djcss
+      - id: djjs
+  - repo: local
+    hooks:
+    - id: hugo
+      name: Regenerate Hugo resources
+      description: This hook regenerates Hugo resources to be commited to repo.
+      entry: hugo --gc --minify
+      pass_filenames: false
+      always_run: true
+      language: system
+  - repo: https://github.com/shssoichiro/oxipng
+    rev: v9.1.1
+    hooks:
+      - id: oxipng
+        args: ["-o", "max", "--strip", "safe"]
+
+ci:
+  skip:
+    - hugo
+    - oxipng
