@@ -1,0 +1,65 @@
+<section id="{{ .id | default .type }}" class="experience py-5">
+  <div class="container">
+    <h3 class="text-center">{{ .title | default (strings.FirstUpper .type) }}</h3>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-8 col-lg-8 py-5">
+        <div class="experience-container px-3 pt-2">
+          <ul class="nav nav-pills mb-3 bg-transparent primary-font" id="pills-tab" role="tablist">
+
+            {{ range $index, $element := (sort (where (where site.RegularPages "Type" "projects") "Params.testimonial.showInHome" true) "Params.testimonial.homeOrder") }}
+            <li class="nav-item px-1 bg-transparent" role="presentation">
+              <div
+                {{ if (eq $index 0) }}
+                class="nav-link active bg-transparent"
+                {{ else }}
+                class="nav-link bg-transparent"
+                {{ end }}
+                aria-selected="true"
+                role="tab"
+                data-bs-toggle="pill"
+                id='{{ replace .Params.testimonial.author.short " " "-" }}-tab'
+                data-bs-target='#pills-{{ replace .Params.testimonial.author.short " " "-" }}'
+                aria-controls='{{ replace .Params.testimonial.author.short " " "-" }}'
+              >
+                {{ .Params.testimonial.author.short }}
+              </div>
+            </li>
+            {{ end }}
+          </ul>
+          <div class="tab-content pb-5 pt-2 bg-transparent primary-font" id="pills-tabContent">
+            {{ range $index, $element := (sort (where (where site.RegularPages "Type" "projects") "Params.testimonial.showInHome" true) "Params.testimonial.homeOrder") }}
+            <div
+              {{ if (eq $index 0) }}
+              class="tab-pane fade show active bg-transparent"
+              {{ else }}
+              class="tab-pane fade bg-transparent"
+              {{ end }}
+              role="tabpanel"
+              id='pills-{{ replace .Params.testimonial.author.short " " "-" }}'
+              aria-labelledby='pills-{{ replace .Params.testimonial.author.short " " "-" }}-tab'
+            >
+              <div>
+                <span class="h4"><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></span>
+
+                <div class="page-content">
+                  {{ with .Params.testimonial }}
+                  <blockquote>
+                    <p>{{ .content | markdownify }}</p>
+                    <span class="cite">
+                      <span>― </span>
+                      <span>
+                        {{ if .author.url }}<a href="{{ .author.url }}">{{ end }}{{ .author.name }}{{ if .author.url }}</a>{{ end }}{{ if .author.role }}, {{ .author.role }}</span>{{ end }}
+                      {{ if .author.company }}<span> @ {{ .author.company }}</span>{{ end }}
+                    </span>
+                  </blockquote>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

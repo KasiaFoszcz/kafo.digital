@@ -1,0 +1,13 @@
+{{ with .Page.Params.testimonial }}
+<blockquote>
+  <p>{{ .content | markdownify }}</p>
+  <span class="cite">
+    <span>― </span>
+    <span>
+      {{ if .author.url }}<a href="{{ .author.url }}">{{ end }}{{ .author.name }}{{ if .author.url }}</a>{{ end }}{{ if
+      .author.role }}, {{ .author.role }}{{ end }}
+    </span>
+    {{ if .author.company }}<span> @ {{ .author.company }}</span>{{ end }}
+  </span>
+</blockquote>
+{{ end }}
