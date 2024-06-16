@@ -1,3 +1,134 @@
-baseURL: http://example.org/
-languageCode: en-us
-title: My New Hugo Site
+baseURL: "https://kafo.digital"
+languageCode: "en-us"
+title: "kafo.digital"
+theme: "hugo-profile"
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+paginate: 9
+enableRobotsTXT: true
+googleAnalytics: "G-XLKGMGGXM0"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menus:
+  main:
+    - identifier: "projects"
+      name: "Projects"
+      title: "Projects"
+      url: "/projects"
+      weight: 1
+
+params:
+  title: "kafo.digital"
+  description: &siteDescription |
+    Hi, my name is Kasia (Kate). I'm a Product Designer with an analytical
+    mindset and experience in Data Engineering.
+  favicon: "/images/favicon.svg"
+  mathjax: false
+  animate: true
+  font:
+    fontWeight: 500
+  customCSS: true
+
+  navbar:
+    # brandLogo: "/logo.png"
+    showBrandLogo: false
+    brandName: "kafo.digital"
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    enableSeparator: true
+
+  sections:
+    - type: hero
+      enable: true
+      title: "I connect"
+      subtitle: "Product Design with Data and Business."
+      content: *siteDescription
+      image: "/images/projects/avatar.png"
+      bottomImage:
+        enable: false
+      roundImage: true
+      button:
+        enable: true
+        name: "See projects →"
+        url: "#selected_projects"
+        download: false
+        newPage: false
+      socialLinks:
+        fontAwesomeIcons:
+          - icon: fab fa-linkedin
+            url: "https://www.linkedin.com/in/katarzyna-foszcz"
+          - icon: fab fa-github
+            url: "https://github.com/KasiaFoszcz"
+          - icon: fab fa-behance
+            url: "https://www.behance.net/kafo"
+          - icon: fab fa-dribbble
+            url: "https://dribbble.com/katarzyna-foszcz"
+          - icon: fa-solid fa-envelope
+            url: "#contact"
+
+    - type: projects
+      enable: true
+      showInNavbar: true
+      title: "Selected projects"
+      id: selected_projects
+
+    - type: testimonials
+      enable: true
+      showInNavbar: true
+      title: "What clients say"
+
+    - type: contact
+      enable: true
+      showInNavbar: true
+      title: "Get in touch"
+      content:
+      btnName: Send →
+      formspree:
+        enable: true
+        formId: "xzbnqwgy"
+        emailCaption: "Enter your email address"
+        messageCaption: "Enter your message here"
+        messageRows: 5
+
+  footer:
+    recentPosts:
+      path: "projects"
+      count: 3
+      title: "Recent projects"
+      enable: false
+      disableFeaturedImage: true
+
+  singlePages:
+    readTime:
+      enable: false
+    scrollprogress:
+      enable: true
+    socialShare: false
+    tags:
+      openInNewTab: false
+
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "Katarzyna Foszcz All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+    social: "Share"
+
+  datesFormat:
+    article: "January 2006"
+    articleList: "January 2006"
+    articleRecent: "January 2006"
