@@ -123,7 +123,7 @@ params:
   terms:
     read: "Read"
     toc: "Table Of Contents"
-    copyright: "Katarzyna Foszcz All rights reserved"
+    copyright: "Katarzyna Foszcz All rights reserved. CC BY-NC-SA 4.0"
     pageNotFound: "Page not found"
     emailText: "Check out this site"
     social: "Share"
