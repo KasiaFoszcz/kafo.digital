@@ -1,0 +1,110 @@
+/* Font adjustments. */
+
+.btn {
+    font-weight: 600;
+}
+
+h1, h2, h3 {
+    font-weight: 700 !important;
+}
+
+/* Block quote in the style borrowed from hugo-stack. */
+
+blockquote .cite {
+    display: block;
+    text-align: right;
+    font-size: 0.75em;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+blockquote p {
+    font-weight: 500 !important;
+}
+
+/* Fix alignment of light/dark mode switch. */
+
+svg#moon, svg#sun {
+    vertical-align: baseline !important;
+}
+
+/* List page adjustments. */
+
+#list-page .card:hover {
+    transition: none;
+    transform: none;
+}
+
+/* Single page adjustments. */
+
+#single .page-content img {
+    margin-top: 1.5rem;
+}
+
+#single .page-content h1, #single .page-content h2, #single .page-content h3, #single .page-content h4, #single .page-content h5, #single .page-content h6 {
+    color: var(--text-color) !important;
+    margin-top: 1.5em;
+}
+
+/* Main page adjustments. */
+
+.hero .hero-content {
+    font-size: larger;
+}
+
+.hero h2, .hero h3 {
+    letter-spacing: -0.01em;
+}
+
+.hero a.btn {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.projects .badge {
+    margin: 0 1% 1% 0;
+}
+
+.projects .card:hover {
+    box-shadow: 0px 8px 56px rgb(15 80 100 / 16%);
+    transition: none;
+    transform: none;
+}
+
+/* Experience style is used for testimonials section. */
+.experience .page-content blockquote {
+    padding: 20px 30px;
+    border-left: 6px solid var(--primary-color) !important;
+    color: var(--text-secondary-color) !important;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.experience .page-content blockquote, .experience .page-content blockquote * {
+    background-color: var(--secondary-color) !important;
+}
+
+.contact .btn {
+    font-weight: 600;
+    padding: 0.7rem 1.75rem;
+}
+
+.contact .btn:focus {
+    box-shadow: none;
+}
+
+.contact .btn:hover {
+    box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+}
+
+#contact-form input[type="email"], #contact-form textarea[name="message"] {
+    padding: 1rem;
+}
+
+#contact-form .form-group.text-center.pt-3 {
+    padding-top: 5rem !important;
+}
