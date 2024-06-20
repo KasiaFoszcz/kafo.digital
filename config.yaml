@@ -1,6 +1,6 @@
 baseURL: "https://kafo.digital"
 languageCode: "en-us"
-title: "kafo.digital"
+title: "kafo.digital – Katarzyna Foszcz"
 theme: "hugo-profile"
 
 outputs:
@@ -32,8 +32,9 @@ menus:
 params:
   title: "kafo.digital"
   description: &siteDescription |
-    Hi, my name is Kasia (Kate). I'm a Product Designer with an analytical
-    mindset and experience in Data Engineering.
+    I'm Kate – a proactive, independent Product Designer with an understanding
+    of Data Science concepts and experience with git/DevOps workflows. An
+    enthusiast of Continuous Discovery approach.
   favicon: "/images/favicon.svg"
   mathjax: false
   animate: true
@@ -123,7 +124,7 @@ params:
   terms:
     read: "Read"
     toc: "Table Of Contents"
-    copyright: "Katarzyna Foszcz All rights reserved. CC BY-NC-SA 4.0"
+    copyright: "Katarzyna Foszcz All rights reserved.<br />CC-BY-NC-SA-4.0"
     pageNotFound: "Page not found"
     emailText: "Check out this site"
     social: "Share"
