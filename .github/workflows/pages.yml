@@ -35,10 +35,6 @@ jobs:
         run: git lfs checkout
 
       # Hugo setup
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "stable"
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -53,7 +49,7 @@ jobs:
           cache: pip
 
       - name: Cache pre-commit environments
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pre-commit/
           key: pre-commit-4|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
@@ -71,6 +67,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       # Build and upload
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
       - name: Build
         run: hugo --minify --gc --baseURL ${{ steps.pages.outputs.base_url }}
 
