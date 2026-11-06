@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.6.0"
+    rev: "v6.0.0"
     hooks:
       - id: check-merge-conflict
       - id: check-toml
@@ -12,11 +12,11 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
   - repo: https://gitlab.com/bmares/check-json5
-    rev: "v1.0.0"
+    rev: "v1.0.1"
     hooks:
       - id: check-json5
   - repo: https://github.com/rtts/djhtml
-    rev: "3.0.6"
+    rev: "3.0.11"
     hooks:
       - id: djhtml
         entry: djhtml --tabwidth 2
@@ -31,8 +31,8 @@ repos:
       pass_filenames: false
       always_run: true
       language: system
-  - repo: https://github.com/shssoichiro/oxipng
-    rev: v9.1.1
+  - repo: https://github.com/oxipng/oxipng
+    rev: v10.2.1
     hooks:
       - id: oxipng
         args: ["-o", "max", "--strip", "safe"]
