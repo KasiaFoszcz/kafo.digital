@@ -2,7 +2,7 @@
 
 [![Deploy Hugo site to Pages](https://github.com/KasiaFoszcz/kafo.digital/actions/workflows/pages.yml/badge.svg)](https://github.com/KasiaFoszcz/kafo.digital/actions/workflows/pages.yml)
 
-The website can be found at <https://kafo.digital>.
+The website can be found at <https://portfolio.kafo.digital>.
 
 ## Local build
 
